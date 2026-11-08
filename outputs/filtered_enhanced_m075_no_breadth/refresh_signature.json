@@ -1,0 +1,112 @@
+{
+  "version": 2,
+  "features": [
+    "pe_ttm",
+    "pb",
+    "ps_ttm",
+    "log_total_mv",
+    "turnover_rate",
+    "roa",
+    "roe",
+    "netprofit_yoy_ratio",
+    "grossprofit_margin_ratio",
+    "netprofit_margin_ratio",
+    "ocf_to_assets",
+    "debt_to_assets_ratio",
+    "or_yoy_ratio",
+    "momentum_5",
+    "momentum_10",
+    "momentum_20",
+    "volatility_20",
+    "volume_ratio_5"
+  ],
+  "offsets": [
+    84,
+    63,
+    42,
+    21,
+    0
+  ],
+  "inputs": {
+    "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\processed\\panel.parquet": "bd057d7a1616f51aa6a8cc1c2d85ab0682f0fa3ef663cea7086500a3adb8e834",
+    "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\processed\\benchmark.parquet": "3516f2f84b0cc33f66b7836103377e15d83d8811d49ead777e9563709520f549",
+    "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\processed\\calendar.parquet": "fcbc94abee3c5baa234d9685d4ba8c1bfb0739f8da117c535d3c8a5f7c463d9c",
+    "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\outputs\\filtered_model\\scores.csv": "501bb6229bb038a92324e36135f7c3a978a713b040ace196da2d1271c020c04a",
+    "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\outputs\\filtered_model\\windows.json": "af10ff1070b11a67011300183c91f0203f6f352b59acb304075d4fea6e98d7fb"
+  },
+  "data": {
+    "start_date": "2022-01-01",
+    "end_date": "2026-09-12",
+    "raw_dir": "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\raw",
+    "processed_dir": "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\processed",
+    "qlib_dir": "C:\\Users\\1\\Desktop\\6400\\qlib-LSTM-CNN strategy\\CNN_LSTM_Project\\data\\qlib",
+    "benchmark": "399101.SZ",
+    "calls_per_minute": 40,
+    "retries": 3,
+    "timeout": 20,
+    "workers": 8,
+    "refresh_days": 5,
+    "financial_lookback_years": 2,
+    "announcement_lag": 0,
+    "min_listing_days": 375,
+    "candidate_count": 50,
+    "missing_sequence": "drop"
+  },
+  "model": {
+    "feature_schema": "financial18_v1",
+    "seed": 42,
+    "device": "cpu",
+    "threads": 2,
+    "epochs": 30,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "early_stopping_patience": 5,
+    "gradient_clip": 1.0,
+    "conv_channels": [
+      64,
+      128
+    ],
+    "hidden_size": 128,
+    "lstm_layers": 2,
+    "conv_dropout": 0.3,
+    "lstm_dropout": 0.3,
+    "dense_dropout": 0.4,
+    "impute": "median",
+    "winsor_quantiles": [
+      0.01,
+      0.99
+    ],
+    "standardize": true,
+    "lookback_months": 12,
+    "validation_fraction": 0.2,
+    "purge_days": 20,
+    "sample_step": 10
+  },
+  "backtest": {
+    "start_date": "2024-01-02",
+    "end_date": "2026-08-14",
+    "rebalance_step": 10,
+    "topk": 10,
+    "initial_cash": 1000000.0,
+    "buy_commission": 0.0003,
+    "sell_commission": 0.0003,
+    "stamp_tax": 0.001,
+    "min_commission": 5.0,
+    "trade_unit": 100,
+    "risk_free_rate": 0.0
+  },
+  "filters": {
+    "enabled": true,
+    "exclude_st": true,
+    "exclude_delisting": true,
+    "min_price": 1.5,
+    "liquidity_quantile": 0.3
+  },
+  "enhanced": {
+    "momentum_weight": 1,
+    "breadth_timing": true,
+    "breadth_threshold": 0.5,
+    "risk_exit_confirmation_days": 3,
+    "model_weight": 0
+  }
+}

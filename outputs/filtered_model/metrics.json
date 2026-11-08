@@ -1,0 +1,22 @@
+{
+  "observations": 634,
+  "total_return": 1.127090606509177,
+  "annualized_return": 0.34985517458931414,
+  "benchmark_return": 0.38061135951993075,
+  "benchmark_annualized_return": 0.1367764929185009,
+  "annualized_excess_return": 0.21307868167081323,
+  "max_drawdown": 0.47873327175147906,
+  "sharpe": 0.9456165655381339,
+  "calmar": 0.7307935237284524,
+  "daily_win_rate": 0.4605678233438486,
+  "mean_daily_turnover": 0.08366968844382483,
+  "annualized_turnover": 21.084761487843856,
+  "total_cost": 65627.30964058067,
+  "ic": 0.020127380088205235,
+  "rank_ic": 0.038180688804668725,
+  "classification_auc": 0.4165258678681498,
+  "matured_predictions": 1019,
+  "source": "tushare_cnn_lstm_filtered_model",
+  "successful_windows": 64,
+  "skipped_windows": 0
+}

@@ -1,0 +1,9 @@
+{
+  "source": "tushare",
+  "start_date": "2022-01-01",
+  "end_date": "2026-09-12",
+  "complete": true,
+  "sessions": 1138,
+  "api_host": "t.xiaodefa.top",
+  "downloaded_at": "2026-10-26T14:54:24.526785"
+}
